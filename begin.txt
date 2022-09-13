@@ -1,0 +1,50 @@
+设置网络: sudo dhclient -v
+更换源文件: /etc/apt/sources.list(sources.list.old是系统安装时的默认配置文件)
+account: cs144
+asswd: bad2bone
+
+windows基本操作命令
+cd /d D:\ 从C盘进入D盘需要加/d选项
+dir = ls(linux)
+del = rm(linux)
+mkdir创建文件夹, rmdir删除文件夹
+echo content > file.txt创建文件
+copy file1 复制文件
+move file/directory directory 移动文件
+cls清除prompt内容
+
+设置共享文件夹：
+1.不要修改共享文件夹文件名
+2.右键指定文件夹右键-属性-共享-设置共享
+3.此电脑-点击右键-映射网络驱动器-选择指定文件夹
+4.linux执行: 
+sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other
+操作已保存到/etc/rc.local
+
+------------GIT------------
+git = working directory + repository(.git, a hidden directory)
+repository contains staging area and commits
+1.staging area: index file
+2.commits: objects folder (snapshots commited)
+Git meanings tracking changes, not storing files agian and again
+
+[git commands]
+git --version: inquire(查询)git版本信息
+git init(activate current directory as working directory)激活当前文件夹为工作文件夹
+git add (add documents to repository), git add . 表示把当前目录下所有文件提交(提交当前文件夹)
+=> set username and email
+git config --global user.email "email@gmail.com" //wyp0488@gmail.com
+git config --global user.name "Wadew" //Wuyuanping201870256
+git commit -m "message"  // -m "comment" 表示提交携带的描述性信息
+git diff file 检查文件相比上次提交有哪些修改内容
+[example]: 在read me 中新增两行
+
+diff --git a/readme.txt b/readme.txt
+index 3226a48..a0cad28 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,2 +1,4 @@
+ git is a version control system
+ git is free software
++git is distributed version control system
++git is free software
